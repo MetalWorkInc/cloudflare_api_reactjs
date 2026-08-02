@@ -17,22 +17,8 @@ export default function App() {
         <Route path="/tarjetas" element={<Tarjetas />} />
         <Route path="/posts/post-a" element={<PostA />} />
         <Route path="/posts/post-b" element={<PostB />} />
-        <Route
-          path="/secure/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/secure/contactos"
-          element={
-            <ProtectedRoute>
-              <Contactos />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/secure/dashboard" element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute> } />
+        <Route path="/secure/contactos" element={ <ProtectedRoute> <Contactos /> </ProtectedRoute> } />
       </Routes>
     </Layout>
   )
