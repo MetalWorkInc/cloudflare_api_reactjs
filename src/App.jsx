@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './Components/Layout.jsx'
+import NotFound from './Pages/404/NotFound.jsx'
 import Home from './Pages/public/home/Home.jsx'
 import Tarjetas from './Pages/public/tarjetas/Tarjetas.jsx'
 import PostA from './Pages/posts/post-a/PostA.jsx'
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/posts/post-b" element={<PostB />} />
         <Route path="/secure/dashboard" element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute> } />
         <Route path="/secure/contactos" element={ <ProtectedRoute> <Contactos /> </ProtectedRoute> } />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
   )

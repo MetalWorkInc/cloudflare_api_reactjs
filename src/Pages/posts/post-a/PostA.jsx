@@ -1,8 +1,8 @@
 import { useFetch } from '../../../Core/hooks/useFetch.js'
-import { dataService } from '../../../Core/services/dataService.js'
+import { getPostById } from '../../../Apis/posts.js'
 
 export default function PostA() {
-  const { data: post, loading, error } = useFetch(() => dataService.getPostById('post-a'))
+  const { data: post, loading, error } = useFetch(() => getPostById('post-a'))
 
   if (loading) return <p className="page">Cargando…</p>
   if (error) return <p className="page">Error: {error}</p>

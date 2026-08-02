@@ -1,9 +1,9 @@
 import { useFetch } from '../../../Core/hooks/useFetch.js'
-import { dataService } from '../../../Core/services/dataService.js'
+import { getTarjetas } from '../../../Apis/cards.js'
 import CardComponent from '../../../Components/Card.jsx'
 
 export default function Tarjetas() {
-  const { data: tarjetas, loading, error } = useFetch(dataService.getTarjetas)
+  const { data: tarjetas, loading, error } = useFetch(getTarjetas)
 
   if (loading) return <p className="page">Cargando tarjetas…</p>
   if (error) return <p className="page">Error: {error}</p>

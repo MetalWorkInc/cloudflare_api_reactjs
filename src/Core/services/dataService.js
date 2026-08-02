@@ -1,6 +1,15 @@
 import { Card } from '../dataobjects/Card.js'
 import { Metric } from '../dataobjects/Metric.js'
 
+export const dataService = {
+  getTarjetas: () => Promise.resolve([...tarjetas]),
+  getMetrics: () => Promise.resolve([...metrics]),
+  getPosts: () => Promise.resolve([...posts]),
+  getPostById: (id) => Promise.resolve(posts.find((p) => p.id === id) || null),
+  getContacts: () => Promise.resolve([...contacts]),
+}
+
+
 const tarjetas = [
   new Card(1, 'Introducción a React', 'Aprende los fundamentos de React 18 con hooks y componentes funcionales.', 'React'),
   new Card(2, 'Vite para desarrollo rápido', 'Configura y optimiza tu entorno de desarrollo con Vite.', 'Vite'),
@@ -32,9 +41,9 @@ const posts = [
   },
 ]
 
-export const dataService = {
-  getTarjetas: () => Promise.resolve([...tarjetas]),
-  getMetrics: () => Promise.resolve([...metrics]),
-  getPosts: () => Promise.resolve([...posts]),
-  getPostById: (id) => Promise.resolve(posts.find((p) => p.id === id) || null),
-}
+const contacts = [
+  { id: 1, name: 'Ana García', email: 'ana.garcia@example.com', role: 'Diseñadora UX' },
+  { id: 2, name: 'Carlos López', email: 'carlos.lopez@example.com', role: 'Desarrollador Frontend' },
+  { id: 3, name: 'María Martínez', email: 'maria.martinez@example.com', role: 'Tech Lead' },
+  { id: 4, name: 'Juan Rodríguez', email: 'juan.rodriguez@example.com', role: 'DevOps Engineer' },
+]

@@ -1,9 +1,9 @@
 import { useFetch } from '../../../Core/hooks/useFetch.js'
-import { dataService } from '../../../Core/services/dataService.js'
+import { getMetrics } from '../../../Apis/metrics.js'
 import { formatNumber } from '../../../Core/utils/formatters.js'
 
 export default function Dashboard() {
-  const { data: metrics, loading, error } = useFetch(dataService.getMetrics)
+  const { data: metrics, loading, error } = useFetch(() => getMetrics())
 
   if (loading) return <p className="page">Cargando métricas…</p>
   if (error) return <p className="page">Error: {error}</p>
