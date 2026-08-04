@@ -1,3 +1,4 @@
+
 // HTTP response status codes
 export const HTTP_STATUS_OK = 200;
 export const HTTP_STATUS_CREATED = 201;
@@ -25,7 +26,8 @@ export const CORS_ALLOW_ORIGIN = '*';
 export const CORS_ALLOW_METHODS = `${HTTP_METHOD_GET}, ${HTTP_METHOD_POST}, ${HTTP_METHOD_PUT}, ${HTTP_METHOD_DELETE}, ${HTTP_METHOD_OPTIONS}`;
 
 export const HEADER_CONTENT_TYPE = 'Content-Type';
-export const CORS_ALLOW_HEADERS = `${HEADER_CONTENT_TYPE}`;
+export const HEADER_API_VAR = 'X-API-VAR';
+export const CORS_ALLOW_HEADERS = `${HEADER_CONTENT_TYPE}, ${HEADER_API_VAR}`;
 
 // Utility helpers: id generation, JSON responses, and validation
 const ALGO_SHA256 = 'SHA-256';

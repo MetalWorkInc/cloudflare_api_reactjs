@@ -23,8 +23,8 @@ export default {
     // Rutas de la API
     if (pathname.startsWith('/api/')) {
         //security: check for the custom header and its value
-        const key = request.headers.get(env.API_HEADER_VAR_NAME)      
-        if (!key || key !== env.VITE_X_API_VAR_VALUE) return jsonResponse({ error: 'Unauthorized' }, HTTP_STATUS_UNAUTHORIZED)
+        const key = request.headers.get(env.API_HEADER_VAR_NAME)              
+        if (!key || key !== env.X_API_VAR_VALUE) return jsonResponse({ error: 'Unauthorized' }, HTTP_STATUS_UNAUTHORIZED)
         //security: check for the request method
         if(request.method !== HTTP_METHOD_GET) return jsonResponse({ error: 'Method not allowed' }, HTTP_STATUS_METHOD_NOT_ALLOWED)          
         // Rutas de la API
