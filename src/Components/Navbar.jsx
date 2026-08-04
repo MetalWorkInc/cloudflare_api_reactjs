@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { ROUTES } from '../Core/constants/routes.js'
 import { useAuth } from '../Core/hooks/useAuth.js'
+import { environment } from '../Core/constants/config.js'
 
 export default function Navbar() {
   const { isAuthenticated, login, logout } = useAuth()
@@ -29,7 +30,7 @@ export default function Navbar() {
               Cerrar sesión
             </button>
           ) : (
-            <button className="btn" onClick={() => login()}>
+            <button className="btn" onClick={() => login(environment.X_API_VAR_VALUE)}>
               Iniciar sesión
             </button>
           )}

@@ -4,7 +4,7 @@ import { checkSession, createSession, destroySession } from '../middlewares/auth
 export function useAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(checkSession)
 
-  const login = useCallback((token = 'demo-token') => {
+  const login = useCallback((token) => {
     createSession(token)
     setIsAuthenticated(true)
   }, [])

@@ -1,12 +1,13 @@
-import { CONFIG } from '../Core/constants/config.js'
+import { environment } from '../Core/constants/config.js'
 import { addHeaders, handleResponseError } from '../Core/interceptors/http.interceptor.js'
 import { logEvent } from '../Core/middlewares/logger.js'
+import { HTTP_METHOD_GET } from '../lib/utils.js'
 
 export async function apiFetch(endpoint, options = {}) {
-  const url = `${CONFIG.API_BASE_URL}${endpoint}`
+  const url = `${environment.API_BASE_URL}${endpoint}`
   const requestOptions = addHeaders(options)
 
-  logEvent('REQUEST', { url, method: requestOptions.method || 'GET' })
+  logEvent('REQUEST', { url, method: requestOptions.method || HTTP_METHOD_GET })
 
   const response = await fetch(url, requestOptions)
 

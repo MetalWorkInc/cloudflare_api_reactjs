@@ -5,7 +5,7 @@ export default function Contactos() {
   const { data, loading, error } = useFetch(() => getContacts())
 
   if (loading) return <p>Cargando...</p>
-  if (error) return <p>Error al cargar los contactos.</p>
+  if (error) return <p className="page">Error al cargar los contactos. Error: {error}</p>  
 
   return (
     <section className="page">

@@ -1,11 +1,14 @@
 import { logEvent } from '../middlewares/logger.js'
+import { environment } from '../constants/config.js'
+import { CONTENT_TYPE_JSON, HEADER_CONTENT_TYPE } from '../../lib/utils.js'
 
 export function addHeaders(options = {}) {
   return {
     ...options,
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
+      [HEADER_CONTENT_TYPE]: CONTENT_TYPE_JSON,
+      [environment.X_API_VAR]: environment.X_API_VAR_VALUE,
+      Accept: CONTENT_TYPE_JSON,
       ...(options.headers || {}),
     },
   }

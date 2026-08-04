@@ -25,5 +25,9 @@
     },
     "compatibility_flags": [
         "nodejs_compat"
-    ]
+    ],
+    "vars": { 
+        "USE_API": "true" ,
+        "API_HEADER_VAR_NAME": "X-API-VAR"
+    } 
 }
